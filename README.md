@@ -1,67 +1,50 @@
-# Staging directory for the GitHub-side websites
+# mkadie.github.io
 
-Two GitHub repos get fed from here. Treat this folder as a staging area — write/edit here, then commit to the appropriate repo.
+Personal page for **Michael Kadie** — I go by **T-Rex**. Served at <https://mkadie.github.io/>.
 
-## `index.html` — for `mkadie/mkadie.github.io`
+This repo is just one file, `index.html`, plus this README. No build step, no framework, no JavaScript bundler — GitHub Pages serves the HTML directly.
 
-The personal page served at <https://mkadie.github.io/>. Two-part layout:
+## What you'll find at the live site
 
-1. **Developer landing** (top, dark, terminal-style) — minimal orientation for anyone who arrives from a GitHub repo. Active repos, profile link, contact.
-2. **Personal page** (R.O.A.R. design language) — about, background/credentials, current work, writing & research links, contact.
+Two parts, in order:
 
-### To deploy
+1. **Developer landing** — a small terminal-style block at the top for anyone who arrives from a GitHub repo. Quick links to the active repositories, the canonical project site, and contact.
+2. **Personal page** — about me, my engineering background, the work I'm currently shipping, my writing and research, and how to reach me.
 
-- Commit the file as `index.html` at the root of `mkadie/mkadie.github.io`.
-- GitHub Pages auto-rebuilds in 30–60 seconds.
+## The active work
 
-### Recent text changes vs. the prior draft
+Most of the day-to-day project information lives elsewhere — this page is just the entry point.
 
-- *"Hi — I'm Michael."* → *"Hi — I'm Michael, I go by T-Rex."*
-- Day-job line: *"Director of Engineering"* → *"Staff / Principal EV Engineer"* (stat lockup) and *"Staff / Principal Electric Vehicle Engineer (day job)"* (background card).
-- *"I assumed he was smart…"* → *"I assumed he was **not** smart…"*  (this was a critical correction — the meaning was always that the assumption was wrong.)
-- *"I'm in Chiang Mai…"* → *"I went to Chiang Mai…"*  (past tense; you're no longer there.)
-- Writing & research card: the four Google Docs links are replaced with links to the new `.md` files in the NeedsBoard repo (see below). Each link shows the original date and the "updated to" date.
+- **[tssfaa.com](https://tssfaa.com/)** — the public project site. R.O.A.R. (Rex's Open Assistive Resources), the schedule, MVP test-group recruitment, photo albums, press, and everything that ships.
+- **[github.com/mkadie/NeedsBoard](https://github.com/mkadie/NeedsBoard)** — T-Rex Talk firmware, hardware files, build instructions. Tagged release [v3.0](https://github.com/mkadie/NeedsBoard/releases/tag/v3.0) shipped March 28, 2026.
+- **[github.com/mkadie/SipNPuff](https://github.com/mkadie/SipNPuff)** — open-source breath-controlled switch. Working alpha/beta.
+- **[github.com/mkadie/MSPM0_Seesaw](https://github.com/mkadie/MSPM0_Seesaw)** — Adafruit Seesaw-compatible I²C firmware for the TI MSPM0G3507.
+- **[github.com/mkadie](https://github.com/mkadie)** — the rest of the public repositories.
 
-## `needsboard-docs/*.md` — for `mkadie/NeedsBoard`
+## Editing the site
 
-Four design docs converted from Google Docs to Markdown. Each preserves the original as a snapshot and adds a "Status today" section reflecting where T-Rex Talk v3.0 stands now.
+It's one `index.html`. Open it in any editor.
 
-### To deploy
+- Inline CSS at the top of the file uses the R.O.A.R. design tokens (same colours and fonts as `tssfaa.com`).
+- All sections are anchored — the header nav uses `#about`, `#background`, `#writing`, `#contact`.
+- Images load from `tssfaa.com` so there are no binary assets in this repo. If `tssfaa.com` is briefly unreachable, the page still renders fine; alt text shows in place of images.
 
-Commit the four files into the `mkadie/NeedsBoard` repo at `needsboard-docs/*.md`:
-
-```
-needsboard-docs/
-├── project-overview.md
-├── button-board-v1.md
-├── needs-word-list.md
-└── plan-going-forward.md
-```
-
-If you'd rather they live at the top level or under `docs/`, just adjust the paths — but if you change the location, update the matching links inside `index.html` so the personal page points to the right spot.
-
-### What's in each file
-
-| File | What | "Updated to" notes |
-| --- | --- | --- |
-| `project-overview.md` | The original "Moana associative device" design brief | T-Rex Talk v3.0 status, four supported hardware variants, devices deployed, related repos |
-| `button-board-v1.md` | March 2025 PCA9555 / latch-circuit button board design | Replaced by `input_manager.py` and the four-variant model; original V1.0 design preserved |
-| `needs-word-list.md` | Moana's six basic needs (the seed vocabulary). The original was a `.docx` that can't auto-export through the Google Docs API — this file holds the summary and pointers to the live `.menu` files | `.menu` files in the repo are now the canonical vocabulary store; original can be pasted in at the marker line |
-| `plan-going-forward.md` | The pre-Open-Sauce-2025 plan, which the author noted "will not age well" | Status today: ✅ shipped, 🔄 in progress, future / queued |
-
-### Commit message suggestion
+After editing, commit and push. GitHub Pages auto-rebuilds in 30–60 seconds.
 
 ```
-Add design-doc snapshots from the original Google Docs
-
-Each file preserves the early-2025 design brief and adds an "Updated"
-section reflecting the T-Rex Talk v3.0 state. The originals stay in
-Google Drive for reference; these are now the canonical Markdown
-versions linked from the mkadie.github.io personal page.
+git add index.html
+git commit -m "Update personal page"
+git push
 ```
 
-## What this directory does NOT contain
+## Reach out
 
-- The `tssfaa.com` site lives at `C:\Users\live\OneDrive\assistive\website\`. Don't mix the two.
-- The `ssi-racing.com` archive site lives at `Z:\websites\ssi-racing.com\`.
-- The original Google Docs are still live — they haven't been deleted. The Markdown files supersede them as the canonical source going forward, but if a future caretaker wants the unedited originals, follow the doc links in the `index.html`'s footer-of-each-card meta line.
+- Email — [main@tssfaa.com](mailto:main@tssfaa.com)
+- GitHub — [@mkadie](https://github.com/mkadie)
+- YouTube — [@but_Idigress](https://www.youtube.com/@but_Idigress)
+
+*Heads up: I run an intentionally affordable mailbox, so replies sometimes land in spam. If you don't hear back in a couple of days, please check your spam folder.*
+
+## License
+
+The page content (the writing) is © Michael Kadie. The page styling builds on the R.O.A.R. design system used at `tssfaa.com` and is reused with attribution.
